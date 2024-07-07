@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .family-tree {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .person {
+      text-align: center;
+      margin: 10px;
+    }
+    .person img {
+      max-width: 100px;
+      max-height: 100px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .description {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="family-tree" id="familyTree">
+  <!-- Tutaj dodawaj kolejne osoby w formacie <div class="person" onclick="showDescription('imię', 'opis')"> -->
+  <div class="person" onclick="showDescription('John', 'Opis Johna')">
+    <img src="john.jpg" alt="John">
+    <div class="description">John</div>
+  </div>
+  <div class="person" onclick="showDescription('Jane', 'Opis Jane')">
+    <img src="jane.jpg" alt="Jane">
+    <div class="description">Jane</div>
+  </div>
+  <!-- Kolejne osoby... -->
+</div>
+
+<div id="descriptionContainer">
+  <h2 id="personName"></h2>
+  <p id="personDescription"></p>
+</div>
+
+<script>
+  function showDescription(name, description) {
+    document.getElementById('personName').innerText = name;
+    document.getElementById('personDescription').innerText = description;
+    document.getElementById('descriptionContainer').style.display = 'block';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('descriptionContainer').style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
